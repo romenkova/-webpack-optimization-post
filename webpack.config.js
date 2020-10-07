@@ -1,43 +1,43 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = (env, argv) => {
+module.exports = () => {
   const config = {
     entry: {
-      main: ["./src/index.js"],
+      main: ['./src/index.js']
     },
     output: {
-      path: path.resolve(__dirname, "./dist"),
-      filename: "[name].js",
+      path: path.resolve(__dirname, './dist'),
+      filename: '[name].js'
     },
     module: {
       rules: [
         {
           test: /\.(js|jsx)$/,
           use: {
-            loader: "babel-loader",
+            loader: 'babel-loader'
           },
-          exclude: /node_modules/,
+          exclude: /node_modules/
         },
         {
           test: /\.s?css$/,
           exclude: /node_modules/,
-          use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"],
+          use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader']
         },
         {
           test: /\.tsx?$/,
-          use: "ts-loader",
-          exclude: /node_modules/,
-        },
-      ],
+          use: 'ts-loader',
+          exclude: /node_modules/
+        }
+      ]
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: "[name].css",
+        filename: '[name].css'
       }),
-      new HtmlWebpackPlugin({ template: "./src/index.html" }),
-    ],
+      new HtmlWebpackPlugin({ template: './src/index.html' })
+    ]
   };
 
   return config;
