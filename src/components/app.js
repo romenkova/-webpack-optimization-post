@@ -18,7 +18,8 @@ const PageWithSelect = lazy(() =>
 export default function App() {
   return (
     <div className="container">
-      <BrowserRouter>
+      <BrowserRouter basename="/webpack-optimization-post/">
+        <a  href="https://github.com/romenkova/webpack-optimization-post">GitHub Repo</a>
         <Navigation />
         <Suspense fallback={<div>Loading...</div>}>
           <Route path="/" exact component={MainPage} />
