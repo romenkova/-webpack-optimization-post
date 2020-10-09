@@ -38,7 +38,7 @@ module.exports = () => {
         filename: '[name].css'
       }),
       new HtmlWebpackPlugin({ template: './src/index.html' }),
-      new BundleAnalyzerPlugin({ analyzerMode: 'static' })
+      new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false })
     ]
   };
 
