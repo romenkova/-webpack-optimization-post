@@ -1,0 +1,19 @@
+.nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav__item {
+  margin-right: 15px;
+}
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 550px;
+  margin: 70px auto;
+}
+
