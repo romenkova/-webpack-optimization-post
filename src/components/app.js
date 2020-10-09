@@ -3,12 +3,14 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Navigation from './navigation/navigation';
 
 const MainPage = lazy(() => import(/* webpackChunkName: "main-page" */ './pages/main-page'));
-const PageWithLodash = lazy(() =>
-  import(/* webpackChunkName: "page-with-lodash" */ './pages/page-with-lodash')
+
+const PageWithoutLodash = lazy(() =>
+  import(/* webpackChunkName: "page-without-lodash" */ './pages/page-without-lodash')
 );
-const PageWithMoment = lazy(() =>
-  import(/* webpackChunkName: "page-with-moment" */ './pages/page-with-moment')
+const PageWithDayJS = lazy(() =>
+  import(/* webpackChunkName: "page-with-dayjs" */ './pages/page-with-dayjs')
 );
+
 const PageWithSelect = lazy(() =>
   import(/* webpackChunkName: "page-with-select" */ './pages/page-with-select')
 );
@@ -21,8 +23,8 @@ export default function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Route path="/" exact component={MainPage} />
           <Route path="/select" component={PageWithSelect} />
-          <Route path="/moment" component={PageWithMoment} />
-          <Route path="/lodash" component={PageWithLodash} />
+          <Route path="/dayjs" component={PageWithDayJS} />
+          <Route path="/lodash" component={PageWithoutLodash} />
         </Suspense>
       </BrowserRouter>
     </div>

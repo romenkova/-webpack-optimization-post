@@ -13,7 +13,7 @@ export default function Navigation() {
         <Link to="/select">select</Link>
       </li>
       <li className="nav__item">
-        <Link to="/moment">moment</Link>
+        <Link to="/dayjs">dayjs</Link>
       </li>
       <li className="nav__item">
         <Link to="/lodash">lodash</Link>
